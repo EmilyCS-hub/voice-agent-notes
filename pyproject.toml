@@ -3,5 +3,20 @@ name = "voice-agent-notes"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = []
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "livekit-agents>=0.10.0",
+    "livekit-plugins-openai>=0.10.0",
+    "livekit-plugins-silero>=0.10.0",
+    "numpy>=1.26.0",
+    "openai>=1.40.0",
+    "sounddevice>=0.4.7",
+    "soundfile>=0.12.1",
+    "python-dotenv==1.1.0",
+    "livekit-plugins-noise-cancellation==0.2.5",
+    "livekit-plugins-turn-detector>=0.10.0",
+]
+
+[tool.setuptools]
+py-modules = ["main", "instructions", "voice_livekit", "livekit_realtime"]
+
