@@ -5,6 +5,11 @@ Minimal end-to-end CLI that records a short voice note, transcribes it, summariz
 ## Setup
 
 ```bash
+git clone https://github.com/EmilyCS-hub/voice-agent-notes.git
+cd voice-agent-notes
+```
+
+```bash
 uv venv --python=3.12.4 .venv
 ```
 
@@ -15,7 +20,7 @@ source .venv/bin/activate
 1. Install dependencies:
 
 ```bash
-pip install -e .
+uv sync
 ```
 
 2. Create .env.local and set your API key in .env.local
@@ -55,6 +60,8 @@ Run with the LiveKit Agents CLI:
 ```bash
 uv run voice_assistant.py console
 ```
+
+or run in dev mode
 
 ```bash
 
