@@ -4,23 +4,31 @@ Minimal end-to-end CLI that records a short voice note, transcribes it, summariz
 
 ## Setup
 
+Clone the repository and create / activate the project virtual environment. These commands assume macOS / zsh and Python 3.12.4 as used in this project.
+
 ```bash
 git clone https://github.com/EmilyCS-hub/voice-agent-notes.git
 cd voice-agent-notes
-```
 
-```bash
+# create a venv using the project's helper (uses Python 3.12.4 in this repo)
 uv venv --python=3.12.4 .venv
-```
 
-```bash
+# activate the virtual environment
 source .venv/bin/activate
 ```
 
 1. Install dependencies:
 
+If you use the `uv` helper in this project:
+
 ```bash
 uv sync
+```
+
+Or using pip directly (editable install):
+
+```bash
+pip install -e .
 ```
 
 2. Create .env.local and set your API key in .env.local
@@ -35,6 +43,8 @@ LIVEKIT_API_KEY="your_livekit_key"
 LIVEKIT_API_SECRET="your_livekit_secret"
 OPENAI_API_KEY="your_openai_key"
 ```
+
+If you plan to use the LiveKit-based voice agents (`voice_assistant.py` and `realtime_voice_assistant.py`) you will need a LiveKit server (or LiveKit Cloud project) and API credentials. LiveKit is an open-source WebRTC platform — see https://livekit.io/ for hosted options, deployment guides, and admin UI to create API keys. Put the WebSocket URL and API key/secret into `.env.local` as shown above.
 
 ## Run
 
